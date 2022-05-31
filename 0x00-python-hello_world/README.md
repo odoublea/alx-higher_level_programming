@@ -1,1 +1,1 @@
-0-run: Shell script that runs a Python script
+// Python Hello world and Technical interview preparation
