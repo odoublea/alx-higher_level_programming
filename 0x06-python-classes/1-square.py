@@ -3,7 +3,7 @@
 
 
 class Square:
-    '''A square has four equal sides.'''
+    '''A square has four equal sides. Some can be seen while some are hidden'''
 
     def __init__(self, size):
-        self.size = size
+        self.__size = size
