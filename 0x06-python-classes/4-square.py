@@ -4,6 +4,7 @@
 
 class Square:
     """Square implementation. All squares have an area"""
+
     def __init__(self, size=0):
         self.size = size
 
