@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module implements a Square object
+This module contains a class Square
+that inherits from Rectangle
 """
 
 
@@ -8,19 +9,25 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    def __init__(self, size):
-        """initialization
+    """
+    This is a class Square
+    """
 
-        Args:
-            size (int): size
+    def __init__(self, size):
         """
-        super().__init__(size, size)
+        This is the Constructor method of Square
+        """
+        self.integer_validator("size", size)
         self.__size = size
 
-    def __str__(self):
-        """string representation
-
-        Returns:
-            str: string
+    def area(self):
         """
-        return "[Square] {:d}/{:d}".format(self.__size, self.__size)
+        This method returns the square area
+        """
+        return self.__size ** 2
+
+    def __str__(self):
+        """
+        This method returns the Square description
+        """
+        return("[Square] {}/{}".format(self.__size, self.__size))

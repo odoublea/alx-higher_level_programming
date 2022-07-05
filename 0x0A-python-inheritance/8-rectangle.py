@@ -1,23 +1,19 @@
 #!/usr/bin/python3
-"""
-This module implements a Rectangle object
-"""
-
-
-BaseGeometry = __import__("7-base_geometry").BaseGeometry
+"""inherits a class"""
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Rectangle implementation
-    """
+    """Rectangle class that inherits BaseGeometry class"""
+
     def __init__(self, width, height):
-        """initialisation
+        """uses the super class function to validate width and height
 
         Args:
-            width (int): width
-            height (int): height
+            width(int): must be int greater than 0 else error
+            height(int): must be int greater than 0 else error
         """
         self.integer_validator("width", width)
-        self.integer_validator("height", height)
         self.__width = width
+        self.integer_validator("height", height)
         self.__height = height
