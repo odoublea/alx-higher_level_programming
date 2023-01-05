@@ -7,13 +7,13 @@ def add(a, b):
         b: second integer
 
     Returns:
-        The return vaue. a + b
+        The return value. a + b
     """
     return (a + b)
 
 
 def sub(a, b):
-    """My substraction function
+    """My subtraction function
 
     Args:
         a: first integer
