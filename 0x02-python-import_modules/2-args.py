@@ -1,28 +1,20 @@
 #!/usr/bin/python3
-'''
-def argument:
-    arg = sys.argv
-    len = len(arg)
-
-    if len <= 0:
-        print("{}:".format(len))
-    elif len == 1:
-        print("{}: argument".format(len))
-        print("{}: {}".format(arg.index(1), i))
-
-    for i in arg:
-        index = arg.index(i)
-        len = len(arg)
-        if i == 0:
-            continue
-        elif index == 1:
-            print("{}: argument".format(len))
-            print("")
-'''
-
 if __name__ == "__main__":
-    if argv == 0:
-        continue
-    for i in argv:
-        index = argv.index(i)
-        print("{}: {}".format(index, i))
+    from sys import argv
+
+    len = len(argv)
+    arg_num = len - 1
+    
+    if len == 1:
+        print("{} argument.".format(arg_num))
+    elif len == 2:
+        print("{} arguments:".format(arg_num))
+        print("{}: {}".format(arg_num, argv[-1]))
+
+    else:
+        print("{} arguments:".format(arg_num))
+        for i in argv:
+            index = argv.index(i)
+            if index == 0:
+                continue
+            print("{}: {}".format(index, i))        
