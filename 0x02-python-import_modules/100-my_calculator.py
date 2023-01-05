@@ -5,7 +5,7 @@ if __name__ == "__main__":
    
     num_of_args = len(argv) - 1
 
-    if num_of_args != 3:
+    if num_of_args != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     a = int(argv[1])
@@ -20,4 +20,4 @@ if __name__ == "__main__":
     for operator, function in zip(operators, functions):
         if operator == argv[2]:
             break
-    print("{} {} {} = {}".format(a, operator, b, function))
+    print("{} {} {} = {}".format(a, argv[2], b, function))
