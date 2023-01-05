@@ -4,7 +4,6 @@ if __name__ == "__main__":
 
     len = len(argv)
     arg_num = len - 1
-    
     if len == 1:
         print("{} argument.".format(arg_num))
     elif len == 2:
@@ -17,4 +16,4 @@ if __name__ == "__main__":
             index = argv.index(i)
             if index == 0:
                 continue
-            print("{}: {}".format(index, i))        
+            print("{}: {}".format(index, i))       
