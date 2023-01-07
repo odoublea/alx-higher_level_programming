@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     from sys import argv
-    from calculator_1 import *
+    from calculator_1 import add, sub, mul, div
 
     num_of_args = len(argv)
 
@@ -11,17 +11,13 @@ if __name__ == "__main__":
 
     a, operator, b = int(argv[1]), argv[2], int(argv[3])
     operators = ["+", "-", "*", "/"]
+    funcs = [add(a, b), sub(a, b), mul(a, b), div(a, b)]
     result = 0
 
-    if operator not in operators:
-        print("Unknown operator. Available operators: +, -, *, and /")
-        exit(1)
-    elif operator == "+":
-        result = add(a, b)
-    elif operator == "-":
-        result = sub(a, b)
-    elif operator == "*":
-        result = mul(a, b)
+    for i, ops in enumerate(operators):
+        if argv[2] == ops:
+            print("{} {} {} = {}".format(a, ops, b, funcs[i]))
+            break
     else:
-        result = div(a, b)
-    print("{} {} {} = {}".format(a, operator, b, result))
+        print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
