@@ -5,7 +5,7 @@ def multiple_returns(sentence):
     first = sentence[0]
 
     if len(sentence) == 0:
-        my_tuple = length, 'None'
+        my_tuple = 0, 'None'
 
     my_tuple = length, first
     return my_tuple
