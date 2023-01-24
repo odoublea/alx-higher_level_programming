@@ -12,14 +12,18 @@ class Square:
     '''
 
     def __init__(self, size=0):
-        """Exception:
+        """Initializing a new square
+
+        Args:
+            size(int): size of the square
+
+        Exception:
             ValueError: size must be greater than zero
             TypeError: size must be an integer
 
         """
-        try:
-            self.__size = size
-            if size < 0:
-                raise ValueError('size must be >= 0')
-        except TypeError:
-            raise ('size must be an integer')
+        self.__size = size
+        if not type(size) is int:
+            raise TypeError('size must be an integer')
+        if size < 0:
+            raise ValueError('size must be >= 0')
