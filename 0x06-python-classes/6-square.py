@@ -46,19 +46,6 @@ class Square:
         if not isinstance(value, int):
             raise TypeError('size must be an integer')
 
-    def my_print(self):
-        """Print and position square hashes"""
-        if self.size == 0:
-            print()
-        for i in range(self.position[1]):
-            print()
-        for i in range(self.size):
-            for j in range(self.position[0]):
-                print(' ', end="")
-            for j in range(self.size):
-                print("{}".format('#'), end="")
-            print()
-
     @property
     def position(self):
         """Get the attribute for position."""
@@ -76,3 +63,17 @@ class Square:
                 not all(num >= 0 for num in value):
             raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
+
+    def my_print(self):
+        """Print and position square hashes"""
+        if self.size == 0:
+            print()
+        else:
+            for i in range(self.position[1]):
+                print()
+            for i in range(self.size):
+                for j in range(self.position[0]):
+                    print(' ', end="")
+                for j in range(self.size):
+                    print("{}".format('#'), end="")
+                print()
