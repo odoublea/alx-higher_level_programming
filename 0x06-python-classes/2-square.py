@@ -9,13 +9,14 @@ class Square:
     Attributes:
         size -- width of the Square
 
-    Exception:
-        ValueError: size must be greater than zero
-        TypeError: size must be an integer
-
     '''
 
     def __init__(self, size=0):
+        """Exception:
+            ValueError: size must be greater than zero
+            TypeError: size must be an integer
+
+        """
         try:
             self.__size = size
             if size < 0:
