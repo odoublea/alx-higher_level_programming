@@ -66,14 +66,19 @@ class Square:
             raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
 
+    def area(self):
+        """Returns the area of the square."""
+        return self.size ** 2
+
     def my_print(self):
         """Print and position square hashes."""
         if self.size == 0:
             print()
+            return
 
         for i in range(self.position[1]):
             print()
-        for i in range(self.position[0]):
+        for i in range(self.size):
             for j in range(self.position[0]):
                 print(' ', end="")
             for j in range(self.size):
