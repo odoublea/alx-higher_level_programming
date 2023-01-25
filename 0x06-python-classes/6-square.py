@@ -30,10 +30,6 @@ class Square:
         if size < 0:
             raise ValueError('size must be >= 0')
 
-    def area(self):
-        """Returns the area of the square."""
-        return self.size ** 2
-
     @property
     def size(self):
         """Get the value of size."""
@@ -73,14 +69,13 @@ class Square:
     def my_print(self):
         """Print and position square hashes."""
         if self.size == 0:
-            print()
-            return
+            print('')
 
         for i in range(self.position[1]):
-            print()
+            print('')
         for i in range(self.size):
             for j in range(self.position[0]):
                 print(' ', end="")
             for j in range(self.size):
                 print("{}".format('#'), end="")
-            print()
+            print('')
