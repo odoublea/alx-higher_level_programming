@@ -70,8 +70,6 @@ class Square:
             print()
             return
         for i in range(self.position[1]):
-            if self.position[1] > 0:
-                continue
             print()
         for i in range(self.size):
             for j in range(self.position[0]):
