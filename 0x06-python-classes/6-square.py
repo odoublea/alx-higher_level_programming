@@ -70,7 +70,8 @@ class Square:
             print()
             return
         for i in range(self.position[1]):
-            return
+            if self.position[1] > 0:
+                continue
         for i in range(self.size):
             for j in range(self.position[0]):
                 print(' ', end="")
