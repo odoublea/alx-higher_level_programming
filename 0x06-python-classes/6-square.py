@@ -1,22 +1,21 @@
 #!/usr/bin/python3
 
-'''This script contain a class Square.'''
+"""This script contain a class Square."""
 
 
 class Square:
-    '''This is a class with a private size attribute
+    """This is a class with a private size attribute
     and an instation of zero.
     Attributes:
         size -- width of the Square
 
-    '''
+    """
 
     def __init__(self, size=0, position=(0, 0)):
         """Initializing a new square
 
         Args:
             size(int): size of the square
-            position(tuple): coordinates of the square
 
         Exception:
             ValueError: size must be greater than zero
@@ -29,6 +28,10 @@ class Square:
             raise TypeError('size must be an integer')
         if size < 0:
             raise ValueError('size must be >= 0')
+
+    def area(self):
+        """Returns the area of the square."""
+        return (self.__size ** 2)
 
     @property
     def size(self):
@@ -62,15 +65,10 @@ class Square:
             raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
 
-    def area(self):
-        """Returns the area of the square."""
-        return self.size ** 2
-
     def my_print(self):
-        """Print and position square hashes."""
+        """Print square hashes."""
         if self.size == 0:
             print('')
-
         for i in range(self.position[1]):
             print('')
         for i in range(self.size):
