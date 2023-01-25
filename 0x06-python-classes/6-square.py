@@ -54,18 +54,20 @@ class Square:
     @position.setter
     def position(self, value):
         """Set value attribute for position.
+
+
         Exception:
-            TypeError: position must be a tuple of 2 positive integers
+            TypeError: position must be a tuple of 2 positive integers.
 
         """
-        if not (isinstance(value, tuple) or len(value) != 2 or
-                not all(isinstance(num, int) for num in value) or
-                not all(num >= 0 for num in value)):
+        if not isinstance(value, tuple) or len(value) != 2 or \
+                not all(isinstance(num, int) for num in value) or \
+                not all(num >= 0 for num in value):
             raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
 
     def my_print(self):
-        """Print and position square hashes"""
+        """Print and position square hashes."""
         if self.size == 0:
             print()
 
