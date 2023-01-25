@@ -16,6 +16,7 @@ class Square:
 
         Args:
             size(int): size of the square
+            position(tuple): coordinate of the square
 
         Exception:
             ValueError: size must be greater than zero
@@ -59,9 +60,9 @@ class Square:
             TypeError: position must be a tuple of 2 positive integers.
 
         """
-        if (not isinstance(value, tuple) or not len(value) == 2 or
-                not all(isinstance(num, int) for num in value) or
-                not all(num >= 0 for num in value)):
+        if not(isinstance(value, tuple) or len(value) == 2 or
+                all(isinstance(num, int) for num in value) or
+                all(num >= 0 for num in value)):
             print("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
