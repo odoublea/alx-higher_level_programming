@@ -68,10 +68,9 @@ class Square:
         """Print square hashes."""
         if self.size == 0:
             print()
-        if self.position[1] > 0:
             return
         for i in range(self.position[1]):
-            print()
+            return
         for i in range(self.size):
             for j in range(self.position[0]):
                 print(' ', end="")
