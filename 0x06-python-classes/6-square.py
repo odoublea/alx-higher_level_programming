@@ -66,15 +66,15 @@ class Square:
 
     def my_print(self):
         """Print and position square hashes"""
-        if self.size == 0:
+        if self.__size == 0:
             print()
 
         else:
-            for i in range(self.position[1]):
+            for i in range(self.__position[1]):
                 print()
-            for i in range(self.size):
-                for j in range(self.position[0]):
+            for i in range(self.__size):
+                for j in range(self.__position[0]):
                     print(' ', end="")
-                for k in range(self.size):
+                for j in range(self.__size):
                     print("{}".format('#'), end="")
                 print()
