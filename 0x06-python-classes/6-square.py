@@ -62,7 +62,8 @@ class Square:
         if not (isinstance(value, tuple) or len(value) == 2 or
                 all(isinstance(num, int) for num in value) or
                 all(num >= 0 for num in value)):
-            self.__position = value
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     def my_print(self):
         """Print square hashes."""
