@@ -59,7 +59,7 @@ class Square:
             TypeError: position must be a tuple of 2 positive integers.
 
         """
-        if not (isinstance(value, tuple) or len(value) != 2 or
+        if not (isinstance(value, tuple) or len(value) == 2 or
                 all(isinstance(num, int) for num in value) or
                 all(num >= 0 for num in value)):
             self.__position = value
