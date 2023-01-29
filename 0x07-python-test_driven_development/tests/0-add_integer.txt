@@ -1,11 +1,4 @@
-============================
-``0-add_integer`` module
-============================
-
-``add_integer()`` will take two arguments that must be integers or float and then add
-them together with the ``+`` operator.
-
-::
+The 0-add_integer Module:
 
 Importing function from the module:
     >>> add_integer = __import__('0-add_integer').add_integer

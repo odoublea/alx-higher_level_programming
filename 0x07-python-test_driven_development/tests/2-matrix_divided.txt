@@ -12,6 +12,9 @@ Make Sure Documentation Exists:
     True
 
 Correct Usage:
+    >>> matrix = [[1, 2, 3]]
+    >>> print(matrix_divided(matrix, 1))
+    [[1.0, 2.0, 3.0]]
 
     >>> matrix = [[1, 2, 3], [4, 5, 6]]
     >>> print(matrix_divided(matrix, 2))
@@ -29,51 +32,61 @@ Correct Usage:
     >>> print(matrix_divided(matrix, True))
     [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
 
-    >>> matrix = [[1, 2, 3]]
-    >>> print(matrix_divided(matrix, 1))
-    [[1.0, 2.0, 3.0]]
-
 Incorrect Usage:
 
     >>> print(matrix_divided(matrix, None))
     Traceback (most recent call last):
+    ...
     TypeError: div must be a number
 
     >>> print(matrix_divided(matrix, 0))
     Traceback (most recent call last):
+    ...
     ZeroDivisionError: division by zero
 
     >>> print(matrix_divided(matrix, False))
     Traceback (most recent call last):
+    ...
     ZeroDivisionError: division by zero
-
-    >>> matrix = []
-    >>> print(matrix_divided(matrix, 2))
-    Traceback (most recent call last):
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-    >>> matrix = [[]]
-    >>> print(matrix_divided(matrix, 2))
-    Traceback (most recent call last):
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
     >>> matrix = None
     >>> print(matrix_divided(matrix, 2))
     Traceback (most recent call last):
+    ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
-
 
     >>> matrix = [[1, 2, 3], [4, 5, 6], {7, 8, 9}]
     >>> print(matrix_divided(matrix, 2))
     Traceback (most recent call last):
+    ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [[1, 2, 3], []]
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
 
     >>> matrix = [[1, 2, 3], [4, 5, 6, 7]]
     >>> print(matrix_divided(matrix, 2))
     Traceback (most recent call last):
+    ...
     TypeError: Each row of the matrix must have the same size
 
     >>> matrix = [[1, "eek", 'a'], ["mouse", 5, 6]]
     >>> print(matrix_divided(matrix, 2))
     Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = []
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [[]]
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+    ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
