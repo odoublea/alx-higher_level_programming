@@ -7,12 +7,12 @@ class Rectangle:
     """A class for rectangle with height and width
 
        Args:
-           width: int
-           height: int
+           width: breadth
+           height: length
     """
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -35,5 +35,5 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError("height must be >= 0")
         self.__height = value
