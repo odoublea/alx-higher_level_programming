@@ -65,4 +65,3 @@ class Rectangle:
                 print()
 
         return ''
-
