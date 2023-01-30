@@ -1,26 +1,35 @@
-==============================
-``5-text_indentation``` module
-==============================
-
-``text_indentation`` takes text(string) as argument and prints a text with 2 new lines after each of these characters: ., ? and :
+The text_indentation Module:
 
 Import module
-text_indentation = __import__('5-text_indentation').text_indentation
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
 
->>> test = """Based on the requirements of each task, you should always write the documentation (module(s) + function(s)) and tests first, before you actually code anything: The intranet checks for Python projects won’t be released before their first deadline, in order for you to focus more on TDD and think about all possible cases? We strongly encourage you to work together on test cases, so that you don’t miss any edge case. But not in the implementation of them! Don’t trust the user, always think about all possible edge cases"""
->>> text_indentation(text)
-Based on the requirements of each task, you should always write the documentation (module(s) + function(s)) and tests first, before you actually code anything:
+Make Sure Documentation Exists:
 
-The intranet checks for Python projects won’t be released before their first deadline, in order for you to focus more on TDD and think about all possible cases?
+    >>> module_documentation = __import__("5-text_indentation").__doc__
+    >>> print(len(module_documentation) > 0)
+    True
 
-We strongly encourage you to work together on test cases, so that you don’t miss any edge case.
+    >>> function_documentation = __import__("5-text_indentation").text_indentation.__doc__
+    >>> print(len(function_documentation) > 0)
+    True
 
-But not in the implementation of them!
+Correct Usage:
 
-Don’t trust the user, always think about all possible edge cases
+	>>> text_indentation("Based on the requirements of each task, you should always write the documentation (module(s) + function(s)) and tests first, before you actually code anything: The intranet checks for Python projects won’t be released before their first deadline, in order for you to focus more on TDD and think about all possible cases? We strongly encourage you to work together on test cases, so that you don’t miss any edge case. But not in the implementation of them! Don’t trust the user, always think about all possible edge cases")
+	Based on the requirements of each task, you should always write the documentation (module(s) + function(s)) and tests first, before you actually code anything:
+	<BLANKLINE>
+	The intranet checks for Python projects won’t be released before their first deadline, in order for you to focus more on TDD and think about all possible cases?
+	<BLANKLINE>
+	We strongly encourage you to work together on test cases, so that you don’t miss any edge case.
+	<BLANKLINE>
+	But not in the implementation of them! Don’t trust the user, always think about all possible edge cases
+	
+	>>> text_indentation(12345678900987654321)
+	Traceback (most recent call last):
+    	....
+	TypeError: text must be a string
 
->>> text = 12345678900987654321
->>> text_indentation(text)
-Traceback (most recent call last):
-    ....
-TypeError: text must be a string
+	>>> text_indentation(["""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere."""])
+	Traceback (most recent call last):
+    	....
+	TypeError: text must be a string
