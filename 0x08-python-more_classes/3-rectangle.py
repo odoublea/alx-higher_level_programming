@@ -6,9 +6,9 @@
 class Rectangle:
     """A class for rectangle with height and width
 
-       Args:
-           width: breadth
-           height: length
+       Properties:
+           height(int): length
+           width(int): breadth
     """
     def __init__(self, width=0, height=0):
         self.width = width
@@ -21,7 +21,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Set rectangle width."""
+        """Set width value."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -30,12 +30,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get height of the rectangle."""
+        """Get the value of height."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Set rectangle height"""
+        """Set height value."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -53,3 +53,6 @@ class Rectangle:
             rectangle_perimeter = 0
         rectangle_perimeter = 2 * (self.__height + self.__width)
         return rectangle_perimeter
+
+    def __str__(self):
+
