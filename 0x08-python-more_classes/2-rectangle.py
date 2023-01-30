@@ -9,9 +9,9 @@ class Rectangle:
            height: int
            width: int
     """
-    def __init__(self, width = 0, height = 0):
-        self.width = width
-        self.height = height
+    def __init__(self, width=0, height=0):
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
@@ -43,10 +43,10 @@ class Rectangle:
 
     def area(self):
         """Return the rectangle area."""
-        r_area = self.__height * self.__width
+        r_area = self.height * self.width
         return r_area
 
     def perimeter(self):
         """Return the rectangle perimeter."""
-        r_perimeter = 2 * (self.__height + self.__width)
+        r_perimeter = 2 * (self.height + self.width)
         return r_perimeter
