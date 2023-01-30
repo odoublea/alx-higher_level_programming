@@ -5,6 +5,7 @@
 
 class Rectangle:
     """A class for rectangle with height and width
+
        Args:
            width: int
            height: int
