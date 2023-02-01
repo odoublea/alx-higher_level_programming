@@ -13,7 +13,7 @@ Make Sure Documentation Exists:
     >>> print(len(function_documentation) > 0)
     True
 
-Start test
+# Valid Tests
 
     >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
     [[7, 10], [15, 22]]
@@ -27,6 +27,9 @@ Start test
     >>> matrix_mul([[2, 1, 0], [3, 0, 5]], [[2, 0], [1, 3], [-1, 4]])
     [[5, 3], [1, 20]]
 
+#TypeError
+    ### m_a and m_b must be a list
+
     >>> matrix_mul({[1, 2], [3, 4]}, [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ...
@@ -36,6 +39,8 @@ Start test
     Traceback (most recent call last):
     ...
     TypeError: m_b must be a list
+
+    ### m_a and m_b must be a list of lists
 
     >>> matrix_mul([[1, 2], [3, 4]], [1, 2, 3, 4])
     Traceback (most call recent last):
@@ -47,6 +52,9 @@ Start test
     ...
     TypeError: m_a must be a list of lists
 
+# ValueError
+    ### m_a and m_b can't be a empty
+
     >>> matrix_mul([], [[1, 2], [3, 4]])
     Traceback (most call recent last):
     ...
@@ -56,6 +64,9 @@ Start test
     Traceback (most call recent last):
     ...
     ValueError: m_b can't be empty
+
+# TypeError
+    ### m_a and m_b should contain only integers or floats
 
     >>> matrix_mul([['a', 'b'], ['c', 'd']], [[1, 2], [3, 4]])
     Traceback (most call recent last):
@@ -67,6 +78,8 @@ Start test
     ...
     TypeError: m_b should contain only integers or floats
 
+    ### each row of m_a and m_b must be of the same size
+
     >>> matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
     Traceback (most call recent last):
     ...
@@ -76,6 +89,9 @@ Start test
     Traceback (most call recent last):
     ...
     TypeError: each row of m_b must be of the same size
+
+#ValueError
+    ### m_a and m_b can't be multiplied
 
     >>> matrix_mul([[1, 2], [3, 4], [5, 6]], [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
     Traceback (most call recent last):
