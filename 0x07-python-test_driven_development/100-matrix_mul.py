@@ -14,7 +14,6 @@ def matrix_mul(m_a, m_b):
     Returns:
         A new matrix representing the multiplication of m_a by m_b.
     """
-
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
 
@@ -27,10 +26,10 @@ def matrix_mul(m_a, m_b):
     if not all(isinstance(row, list) for row in m_b):
         raise TypeError("m_b must be a list of lists")
 
-    if m_a == [] or m_a == [[]]:
+    if not m_a:
         raise ValueError("m_a can't be empty")
 
-    if m_b == [] or m_b == [[]]:
+    if not m_b:
         raise ValueError("m_b can't be empty")
 
     if not all((isinstance(ele, (int, float))) for ele in
@@ -68,3 +67,5 @@ def matrix_mul(m_a, m_b):
         new_matrix.append(new_row)
 
     return new_matrix
+
+matrix_mul([[1, 2], [3, 4], [5, 6]], [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
