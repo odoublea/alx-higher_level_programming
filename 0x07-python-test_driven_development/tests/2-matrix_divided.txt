@@ -53,13 +53,13 @@ Incorrect Usage:
     >>> print(matrix_divided(matrix, 2))
     Traceback (most recent call last):
     ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    TypeError: matrix must be a list of lists of integers/floats
 
     >>> matrix = [[1, 2, 3], [4, 5, 6], {7, 8, 9}]
     >>> print(matrix_divided(matrix, 2))
     Traceback (most recent call last):
     ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    TypeError: matrix must be a list of lists of integers/floats
 
     >>> matrix = [[1, 2, 3], []]
     >>> print(matrix_divided(matrix, 2))
@@ -77,16 +77,16 @@ Incorrect Usage:
     >>> print(matrix_divided(matrix, 2))
     Traceback (most recent call last):
     ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    TypeError: matrix must be a list of lists of integers/floats
 
     >>> matrix = []
     >>> print(matrix_divided(matrix, 2))
     Traceback (most recent call last):
     ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    TypeError: matrix must be a list of lists of integers/floats
 
     >>> matrix = [[]]
     >>> print(matrix_divided(matrix, 2))
     Traceback (most recent call last):
     ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    TypeError: matrix must be a list of lists of integers/floats
