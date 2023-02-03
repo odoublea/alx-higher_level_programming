@@ -34,7 +34,7 @@ Make Sure Documentation Exists:
 #TypeError
     ### m_a and m_b must be a list
 
-    >>> lazy_matrix_mul({[1, 2], [3, 4]}, [[1, 2], [3, 4]])
+    >>> lazy_matrix_mul(([1, 2], [3, 4]), [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ...
     TypeError: m_a must be a list
