@@ -47,12 +47,12 @@ Make Sure Documentation Exists:
     ### m_a and m_b must be a list of lists
 
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [1, 2, 3, 4])
-    Traceback (most call recent last):
+    Traceback (most recent call last):
     ...
     TypeError: m_b must be a list of lists
 
     >>> lazy_matrix_mul([1, 2, 3, 4], [[1, 2], [3, 4]])
-    Traceback (most call recent last):
+    Traceback (most recent call last):
     ...
     TypeError: m_a must be a list of lists
 
@@ -60,12 +60,12 @@ Make Sure Documentation Exists:
     ### m_a and m_b can't be a empty
 
     >>> lazy_matrix_mul([], [[1, 2], [3, 4]])
-    Traceback (most call recent last):
+    Traceback (most recent call last):
     ...
     ValueError: m_a can't be empty
 
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [[]])
-    Traceback (most call recent last):
+    Traceback (most recent call last):
     ...
     ValueError: m_b can't be empty
 
@@ -73,24 +73,24 @@ Make Sure Documentation Exists:
     ### m_a and m_b should contain only integers or floats
 
     >>> lazy_matrix_mul([['a', 'b'], ['c', 'd']], [[1, 2], [3, 4]])
-    Traceback (most call recent last):
+    Traceback (most recent call last):
     ...
     TypeError: m_a should contain only integers or floats
 
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [['a', 'b'], ['c', 'd']])
-    Traceback (most call recent last):
+    Traceback (most recent call last):
     ...
     TypeError: m_b should contain only integers or floats
 
     ### each row of m_a and m_b must be of the same size
 
     >>> lazy_matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
-    Traceback (most call recent last):
+    Traceback (most recent call last):
     ...
     TypeError: each row of m_a must be of the same size
 
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [4, 5]])
-    Traceback (most call recent last):
+    Traceback (most recent call last):
     ...
     TypeError: each row of m_b must be of the same size
 
@@ -98,7 +98,7 @@ Make Sure Documentation Exists:
     ### m_a and m_b can't be multiplied
 
     >>> lazy_matrix_mul([[1, 2], [3, 4], [5, 6]], [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
-    Traceback (most call recent last):
+    Traceback (most recent call last):
     ...
     ValueError: m_a and m_b can't be multiplied
 
