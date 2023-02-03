@@ -1,7 +1,7 @@
-The lazy_matrix_mul Module:
+The lazy matrix mul Module:
 
 Import module
-    >>> lazy_matrix_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 	
 Make Sure Documentation Exists:
 
