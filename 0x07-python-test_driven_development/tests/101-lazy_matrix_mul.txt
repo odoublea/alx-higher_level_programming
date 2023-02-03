@@ -107,7 +107,7 @@ Make Sure Documentation Exists:
     ...
     ValueError: m_a and m_b can't be multiplied
 
-    >>> lazy_matrix_mul()
+    >>> lazy_matrix_mul() # doctest: +NORMALIZE_WHITESPACE
     Traceback (most recent call last):
     ...
     TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
