@@ -1,0 +1,48 @@
+The Mylist Module:
+    >>> MyList = __import__("1-my_list").MyList
+
+Make Sure Documentation Exists:
+
+    >>> module_documentation = __import__("1-my_list").__doc__
+    >>> print(len(module_documentation) > 0)
+    True
+
+    >>> function_documentation = __import__("1-my_list").MyList.__doc__
+    >>> print(len(function_documentation) > 0)
+    True
+
+Test begins
+
+    >>> list = Mylist()
+    >>> list
+    >>> []
+
+    >>> list.append(1)
+    >>> list
+    >>> [1]
+
+    >>> list.append(8)
+    >>> list
+    >>> [1, 8]
+
+    >>> list.append(3)
+    >>> list
+    >>> [1, 8, 3]
+
+    >>> list.append(2)
+    >>> list
+    >>> [1, 8, 3, 2]
+
+    >>> list.append(10)
+    >>> list
+    >>> [1, 8, 3, 2, 10]
+
+    >>> list.append('a')
+    Traceback (most recent call last):
+    ...
+    TypeError: all the elements of the list should be type int
+
+    >>> list.append()
+    Traceback (most recent call last):
+    ...
+    TypeError: list.append() takes exactly one argument (0 given)
