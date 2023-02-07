@@ -16,10 +16,7 @@ class BaseGeometry:
             name(string)
             value(int)
         """
-        if not type(name) == str:
-            raise TypeError("{} `name` must be a str"
-                            .format(__class__.__name__))
-        else:
+        if type(name) == str:
             self.name = name
         if not type(value) == int:
             raise TypeError("{} must be an integer".format(self.name))

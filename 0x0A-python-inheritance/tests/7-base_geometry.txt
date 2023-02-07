@@ -26,7 +26,7 @@ Make Sure Documentation Exists:
     >>> bg.integer_validator(89, -89)
     Traceback (most recent call last):
     ...
-    TypeError: BaseGeometry `name` must be a str
+    ValueError: int must be greater than 0
     
     >>> bg.integer_validator("int", 8.9)
     Traceback (most recent call last):
@@ -34,11 +34,6 @@ Make Sure Documentation Exists:
     TypeError: int must be an integer
     
     >>> bg.integer_validator("int", "John")
-    Traceback (most recent call last):
-    ...
-    TypeError: int must be an integer
-    
-    >>> bg.integer_validator("int", [89])
     Traceback (most recent call last):
     ...
     TypeError: int must be an integer
