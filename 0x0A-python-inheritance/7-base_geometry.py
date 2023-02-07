@@ -11,6 +11,11 @@ class BaseGeometry:
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
+        """Function that validates attributes of base class
+        Args:
+            name(string)
+            value(int)
+        """
         if not type(name) == str:
             raise TypeError("{} `name` must be a str"
                             .format(__class__.__name__))
