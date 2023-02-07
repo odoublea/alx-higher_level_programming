@@ -10,7 +10,8 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """This is a rectangle classs with attr width and height.
-    It is a subclass of BaseGeometry 
+    It is a subclass of BaseGeometry
+
     Args:
         width(int): must be int greater than 0 else error
         height(int): must be int greater than 0 else error
