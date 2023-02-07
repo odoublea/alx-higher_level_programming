@@ -1,4 +1,5 @@
-The Mylist Module:
+The Print Sorted List Module:
+
     >>> MyList = __import__("1-my_list").MyList
 
 Make Sure Documentation Exists:
@@ -13,7 +14,7 @@ Make Sure Documentation Exists:
 
 Test begins
 
-    >>> list = Mylist()
+    >>> list = MyList()
     >>> list
     []
 
@@ -49,4 +50,4 @@ Test begins
     >>> list.append()
     Traceback (most recent call last):
     ...
-    TypeError: list.append() takes exactly one argument (0 given)
+    TypeError: append() takes exactly one argument (0 given)
