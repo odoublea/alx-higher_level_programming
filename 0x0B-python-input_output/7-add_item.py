@@ -11,10 +11,7 @@ if __name__ == "__main__":
     try:
         new_list = load_from_json_file("add_item.json")
     except FileNotFoundError:
-        pass
         new_list = []
 
-    for i in argv[1:]:
-        new_list.append(i)
-
+    new_list.extend(argv[1:])
     save_to_json_file(new_list, "add_item.json")
