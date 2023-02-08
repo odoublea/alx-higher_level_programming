@@ -13,7 +13,7 @@ if __name__ == "__main__":
         new_list = load_from_json_file("add_item.json")
     except FileNotFoundError:
         pass
-    new_list = []
+        new_list = []
 
     for i in argv[1:]:
         new_list.append(i)
