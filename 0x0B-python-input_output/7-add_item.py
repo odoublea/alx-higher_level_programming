@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 """The Load, Add, Save module."""
-import json
 from sys import argv
 
 
