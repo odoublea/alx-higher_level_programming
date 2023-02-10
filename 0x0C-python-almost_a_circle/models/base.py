@@ -8,10 +8,14 @@ class Base():
     This class will be the `base` of all other classes in this project.
     """
     __nb_objects = 0
+    
     def __init__(self, id=None):
-        __nb_objects += 1
-        self.id = id
-
-u = Base(1)
-print(u.id)
-print(Base.__nb_objects)
+        """initializing id
+        Args:
+            id(int): number of instance class.
+        """
+        if id is None:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
+        else:
+            self.id = id
