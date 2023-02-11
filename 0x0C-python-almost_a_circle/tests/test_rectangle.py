@@ -75,8 +75,13 @@ class TestRectangle(unittest.TestCase):
     def test_update_rectangle(self):
         r10 = Rectangle(9, 6, 20, 23, 10)
         r10.update(89, 2, 3, 4)
-        self.assertEqual((r10.id, r10.width, r10.height, r10.x, r10.y), (89, 2, 3, 4, 23))
+        self.assertEqual(
+            (r10.id, r10.width, r10.height, r10.x, r10.y), (89, 2, 3, 4, 23))
 
-        
+        r10.update(y=1, width=23, x=20, id=72)
+        self.assertEqual(
+            (r10.id, r10.width, r10.height, r10.x, r10.y), (72, 23, 3, 20, 1))
+
+
 if __name__ == '__main__':
     unittest.main()
