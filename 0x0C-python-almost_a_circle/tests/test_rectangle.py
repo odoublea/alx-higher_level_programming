@@ -68,6 +68,15 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r7.area(), 20)
         self.assertEqual(r8.area(), 54)
 
+    def test_rectangle_str(self):
+        r9 = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(r9.__str__(), "[Rectangle] (12) 2/1 - 4/6")
+
+    def test_update_rectangle(self):
+        r10 = Rectangle(9, 6, 20, 23, 10)
+        r10.update(89, 2, 3, 4)
+        self.assertEqual((r10.id, r10.width, r10.height, r10.x, r10.y), (89, 2, 3, 4, 23))
+
         
 if __name__ == '__main__':
     unittest.main()

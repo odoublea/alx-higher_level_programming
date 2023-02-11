@@ -32,9 +32,9 @@ class Rectangle(Base):
     def width(self, value):
         """Set rectangle width."""
         if not isinstance(value, int) and value is not type(int):
-            raise TypeError(f"width must be an integer")
+            raise TypeError("width must be an integer")
         if value <= 0:
-            raise ValueError(f"width must be > 0")
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -99,3 +99,10 @@ class Rectangle(Base):
         desc = f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y}"\
                f" - {self.__width}/{self.__height}"
         return desc
+
+    def update(self, *args, **kwargs):
+        """Update the rectangle."""      
+        vars = ('id', 'width', 'height', 'x', 'y')
+
+        for attr, val in zip(vars, args):
+            setattr(self, attr, val)
