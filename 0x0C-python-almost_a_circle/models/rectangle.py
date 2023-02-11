@@ -14,12 +14,14 @@ class Rectangle(Base):
             id(int): id of the rectangle
                     increases when another rectangle is added
     """
+    rec_display = '#'
+
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -29,7 +31,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Set rectangle width."""
-        if not isinstance(value, int):
+        if not isinstance(value, int) and value is not type(int):
             raise TypeError(f"width must be an integer")
         if value <= 0:
             raise ValueError(f"width must be > 0")
@@ -76,3 +78,24 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """Calculate the area of the rectangle"""
+        return self.__width * self.__height
+
+    def display(self):
+        """Display rectangle with `#`."""
+        for i in range(self.__y):
+            print()
+        for row in range(self.__height):
+            for j in range(self.__y):
+                print(' ', end='')
+            for hash in range(self.__width):
+                print("{}".format(self.rec_display), end='')
+            print()
+
+    def __str__(self):
+        """Return string representation of the rectangle instance"""
+        desc = f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y}"\
+               f" - {self.__width}/{self.__height}"
+        return desc
