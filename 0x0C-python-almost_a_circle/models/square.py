@@ -32,9 +32,9 @@ class Square(Rectangle):
         self.__size = value
 
     def update(self, *args, **kwargs):
-        vars = ('id', 'size', 'x', 'y')
+        attrs = ('id', 'size', 'x', 'y')
 
-        for attr, val in zip(vars, args):
+        for attr, val in zip(attrs, args):
             setattr(self, attr, val)
 
         for key, val in kwargs.items():
