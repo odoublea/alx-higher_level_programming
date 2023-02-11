@@ -106,3 +106,6 @@ class Rectangle(Base):
 
         for attr, val in zip(vars, args):
             setattr(self, attr, val)
+        
+        for key, val in kwargs.items():
+            setattr(self, key, val)
