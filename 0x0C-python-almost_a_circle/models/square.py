@@ -5,7 +5,14 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """The Square class."""
+    """The Square class.
+        Args:
+            size(int): size of the square
+            x(int): space around the width
+            y(int): space around the height
+            id(int): id of the square
+                    increases when another square is added.
+    """
     def __init__(self, size, x=0, y=0, id=None):
         """Super initializing attributes."""
         super().__init__(size, size, x, y, id)
@@ -32,6 +39,7 @@ class Square(Rectangle):
         self.__size = value
 
     def update(self, *args, **kwargs):
+        """Update the class Square"""
         attrs = ('id', 'size', 'x', 'y')
 
         for attr, val in zip(attrs, args):

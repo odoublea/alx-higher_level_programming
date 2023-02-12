@@ -5,7 +5,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """The Rectangle class initialization function
+    """The Rectangle class
         Args:
             width(int): width of the rectangle
             height(int): height of the rectangle
