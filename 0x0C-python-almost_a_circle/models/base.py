@@ -43,12 +43,12 @@ class Base():
             cls: Class
         """
         filename = cls.__name__ + ".json"
-        with open(filename, "w", encoding="utf-8") as f:
+        with open(filename, "w", encoding="utf-8") as jsonfile:
             if list_objs is None:
-                f.write("[]")
+                jsonfile.write("[]")
 
             list_dicts = [o.to_dictionary() for o in list_objs]
-            f.write(cls.to_json_string(list_dicts))
+            jsonfile.write(cls.to_json_string(list_dicts))
 
     @staticmethod
     def from_json_string(json_string):
@@ -71,9 +71,25 @@ class Base():
             list of Rectangle or list of Square instances.
             cls: Class
         """
+        if cls.__name__ == 'Square':
+            dummy = cls(1)
+        else:
+            dummy = cls(1, 1)
+        dummy.update(**dictionary)
+        return dummy
 
-        # with open(json_string) as f:
-        #     if json_string is None or json_string == []:
-        #         return "[]"
-        #     else:
-        #         return json.load(f)
+    @classmethod
+    def load_from_file(cls):
+        """Class method that returns a list of instances from a file.
+        Reads from `<cls.__name__>.json`.
+        Args:
+            cls:
+        """
+        filename = str(cls.__name__) + ".json"
+        with open(filename, "r") as jsonfile:
+            try:
+                with open(filename, "r") as jsonfile:
+                    list_dicts = cls.from_json_string(jsonfile.read())
+                    return [cls.create(**d) for d in list_dicts]
+            except IOError:
+                return []
