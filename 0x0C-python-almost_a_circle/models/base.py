@@ -2,6 +2,7 @@
 
 """The Base Class"""
 import json
+import csv
 
 
 class Base():
@@ -43,12 +44,12 @@ class Base():
             cls: Class
         """
         filename = cls.__name__ + ".json"
-        with open(filename, "w", encoding="utf-8") as jsonfile:
+        with open(filename, "w", encoding="utf-8") as json_file:
             if list_objs is None:
-                jsonfile.write("[]")
+                json_file.write("[]")
 
             list_dicts = [o.to_dictionary() for o in list_objs]
-            jsonfile.write(cls.to_json_string(list_dicts))
+            json_file.write(cls.to_json_string(list_dicts))
 
     @staticmethod
     def from_json_string(json_string):
@@ -86,10 +87,36 @@ class Base():
             cls:
         """
         filename = str(cls.__name__) + ".json"
-        with open(filename, "r") as jsonfile:
+        with open(filename, "r") as json_file:
             try:
-                with open(filename, "r") as jsonfile:
-                    list_dicts = cls.from_json_string(jsonfile.read())
+                with open(filename, "r", encoding="utf-8") as json_file:
+                    list_dicts = cls.from_json_string(json_file.read())
                     return [cls.create(**d) for d in list_dicts]
             except IOError:
                 return []
+    
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Write the CSV serialization of a list of objects to a file.
+        Args:
+            list_objs (list): A list of inherited Base instances.
+        """
+        if cls.__name__ == 'Rectangle':
+            filename = cls.__name__ + ".csv"
+            fields = ['id', 'width', 'height', 'x', 'y']
+        if cls.__name__ == 'Square':
+            filename = cls.__name__ + ".csv"
+            fields = ['id', 'size', 'x', 'y']
+
+        with open(filename, "w", newline='') as csv_file:
+            if list_objs is None or list_objs == []:
+                writer = csv_file.write("[]")
+
+            writer = csv.DictWriter(filename, fieldnames=fields)
+            for obj in list_objs:
+                writer.writerow(obj.to_dictionary())
+
+            # csv_file.write(cls.to_json_string(list_dicts))
+    
+    # @classmethod
+    # def load_to_file_csv(cls, list_objs):
