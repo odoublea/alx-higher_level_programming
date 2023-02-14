@@ -88,7 +88,7 @@ class Rectangle(Base):
         for i in range(self.__y):
             print()
         for row in range(self.__height):
-            for j in range(self.__y):
+            for j in range(self.__x):
                 print(' ', end='')
             for hash in range(self.__width):
                 print("{}".format(self.rec_display), end='')
