@@ -12,6 +12,7 @@ class Base():
         __nb_objects += 1
         self.id = id
 
-u = Base(1)
+u = Base()
+u.id = 'Hi'
 print(u.id)
 print(Base.__nb_objects)
