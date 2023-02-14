@@ -54,7 +54,7 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
-        """static method that returns the list of the 
+        """Static method that returns the list of the
         JSON string representation.
         Args:
             json_string: string representing a list of dictionaries.
@@ -95,7 +95,7 @@ class Base():
                     return [cls.create(**d) for d in list_dicts]
             except IOError:
                 return []
-    
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Write the CSV serialization of a list of objects to a file.
