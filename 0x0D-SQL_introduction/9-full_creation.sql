@@ -1,4 +1,5 @@
 -- Create a table in the current database on MySQL server
+-- Add multiple rows
 CREATE TABLE IF NOT EXISTS second_table (
 	id INT,
 	name VARCHAR(256),
