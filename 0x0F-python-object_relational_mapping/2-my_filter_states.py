@@ -11,8 +11,9 @@ if __name__ == '__main__':
 
     # Connect to the MySQL server
     try:
-        conn = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database, charset="utf8")
-    
+        conn = MySQLdb.connect(host="localhost", port=3306, user=username,
+                               passwd=password, db=database, charset="utf8")
+
     except Exception:
         print('Failed to connect to the database')
         exit(0)
@@ -21,7 +22,8 @@ if __name__ == '__main__':
     cur = conn.cursor()
 
     # Execute the SELECT query
-    cur.execute(f"SELECT * FROM states WHERE name = BINARY '{searched}' ORDER BY id")
+    cur.execute(
+        f"SELECT * FROM states WHERE name = BINARY '{searched}' ORDER BY id")
 
     # Fetch all rows from the query result
     query_rows = cur.fetchall()
