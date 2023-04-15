@@ -20,7 +20,7 @@ if __name__ == '__main__':
     cur = conn.cursor()
 
     # Execute the SELECT query
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%'") # HERE I have to know SQL to grab all states in my database
+    cur.execute("SELECT * FROM states WHERE name LIKE 'N%'") 
 
     # Fetch all rows from the query result
     query_rows = cur.fetchall()
