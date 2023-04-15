@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     # Check if search query is valid
     if (re.search('^[a-zA-Z ]+$', searched) is None):
-        print('Enter a valid name state (example: Arizona)')
+        print('Enter a valid state name (example: Arizona)')
         exit(1)
 
     # Connect to the MySQL server
