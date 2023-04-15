@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import MySQLdb
 from sys import argv
+import re
 
 if __name__ == '__main__':
     # Get command line arguments
@@ -8,6 +9,16 @@ if __name__ == '__main__':
     password = argv[2]
     database = argv[3]
     searched = argv[4]
+
+    # Check length of arguments
+    if (len(argv) != 5):
+        print('Use: username, password, database name, state name')
+        exit(1)
+
+    # Check if search query is valid
+    if (re.search('^[a-zA-Z ]+$', searched) is None):
+        print('Enter a valid name state (example: Arizona)')
+        exit(1)
 
     # Connect to the MySQL server
     try:
@@ -20,8 +31,11 @@ if __name__ == '__main__':
     # Create a cursor object
     cur = conn.cursor()
 
-    # Execute the SELECT query
-    cur.execute(f"SELECT * FROM states WHERE name = BINARY '{searched}' ORDER BY id")
+    # Prepare the SELECT query
+    query = f"SELECT * FROM states WHERE name = BINARY '{searched}' ORDER BY id"
+
+    # Execute the query
+    cur.execute(query)
 
     # Fetch all rows from the query result
     query_rows = cur.fetchall()
