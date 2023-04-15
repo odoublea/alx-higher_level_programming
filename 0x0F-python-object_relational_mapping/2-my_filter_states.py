@@ -7,11 +7,12 @@ if __name__ == '__main__':
     username = argv[1]
     password = argv[2]
     database = argv[3]
+    mySearch = argv[4]
 
     # Connect to the MySQL server
     try:
         conn = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database, charset="utf8")
-
+    
     except Exception:
         print('Failed to connect to the database')
         exit(0)
@@ -20,7 +21,7 @@ if __name__ == '__main__':
     cur = conn.cursor()
 
     # Execute the SELECT query
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id") 
+    cur.execute(f"SELECT * FROM states WHERE name = BINARY '{mySearch}' ORDER BY id")
 
     # Fetch all rows from the query result
     query_rows = cur.fetchall()
