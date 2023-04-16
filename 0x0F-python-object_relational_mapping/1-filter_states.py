@@ -13,7 +13,7 @@ if __name__ == '__main__':
     database = argv[3]
 
     if len(argv) != 4:
-        print(f"Usage: {argv[0]} username password database")
+        print("Usage: {} username password database".format(argv[0]))
         sys.exit(1)
 
     # Connect to the MySQL server
@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     except Exception:
         print('Failed to connect to the database')
-        exit(0)
+        exit(1)
 
     # Create a cursor object
     cur = conn.cursor()
