@@ -7,9 +7,6 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    '''This script lists all states with a name starting `N` from the database
-       hbtn_0e_0_usa
-    '''
     # Get command line arguments
     username = argv[1]
     password = argv[2]
