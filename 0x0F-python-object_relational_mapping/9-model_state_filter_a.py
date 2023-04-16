@@ -5,15 +5,15 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-import sys
+from sys import argv
 
 if __name__ == '__main__':
     '''This script lists all State objects that contain the letter a from the
        database hbtn_0e_6_usa
        '''
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+    username = argv[1]
+    password = argv[2]
+    database = argv[3]
 
     engine = create_engine(
         f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}')
