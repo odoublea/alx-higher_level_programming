@@ -2,7 +2,6 @@
 import MySQLdb
 from sys import argv
 
-
 # Get command line arguments
 username = argv[1]
 password = argv[2]
