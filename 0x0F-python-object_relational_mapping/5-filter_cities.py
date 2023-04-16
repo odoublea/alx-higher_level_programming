@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-'''This module contains a script that takes in the name of a state as an argument'''
+'''This module contains a script that takes in the name of a state
+   as an argument
+   '''
 import MySQLdb
 from sys import argv
 import re
