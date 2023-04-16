@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 import MySQLdb
 from sys import argv
-'''This module contains a script that lists all states with a name starting `N`
-    from the database hbtn_0e_0_usa with without ORM
-'''
+'''This module contains a script that lists all states with a
+   name starting `N` from the database hbtn_0e_0_usa with without ORM
+   '''
 
 
 if __name__ == '__main__':
     '''This script lists all states with a name starting `N` from the database
-    hbtn_0e_0_usa
+       hbtn_0e_0_usa
     '''
     # Get command line arguments
     username = argv[1]
@@ -27,8 +27,11 @@ if __name__ == '__main__':
     # Create a cursor object
     cur = conn.cursor()
 
+    #SELECT query
+    selectQuery = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
+
     # Execute the SELECT query
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
+    cur.execute(selectQuery)
 
     # Fetch all rows from the query result
     query_rows = cur.fetchall()
