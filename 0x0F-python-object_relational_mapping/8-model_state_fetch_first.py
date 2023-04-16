@@ -8,7 +8,9 @@ from model_state import Base, State
 import sys
 
 if __name__ == '__main__':
-    '''This script lists the first State object from the database hbtn_0e_6_usa'''
+    '''This script lists the first State object from the database
+       hbtn_0e_6_usa
+       '''
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
