@@ -9,6 +9,10 @@ from model_state import Base, State
 from sys import argv
 
 if __name__ == '__main__':
+    if len(argv) != 4:
+        print(f"Usage: username password database")
+        sys.exit(1)
+
     username = argv[1]
     password = argv[2]
     database = argv[3]
@@ -22,12 +26,13 @@ if __name__ == '__main__':
 
     session = Session()
 
-    state = session.query(State).filter(State.id == 2)
+    state = session.query(State).filter(State.id == 2).first()
 
     if state is None:
         print("State with id=2 not found")
         exit(1)
 
     state.name = "New Mexico"
+
     session.commit()
     session.close()
