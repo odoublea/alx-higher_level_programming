@@ -11,7 +11,10 @@ Base = declarative_base()
 
 class State(Base):
     """
-    Representation of the table states
+    Class definition of a State
+    defines a state by:
+        id: integer, auto-generated, primary key
+        name: string, 128 characters, nullable
     """
     __tablename__ = 'states'
 

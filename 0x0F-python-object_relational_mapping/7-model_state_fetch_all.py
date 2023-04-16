@@ -1,10 +1,13 @@
 #!/usr/bin/python3
+'''This module contains a script that lists all State objects from the database
+   with an ORM'''
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 import sys
 
 if __name__ == '__main__':
+    '''This script lists all State objects from the database with an ORM'''
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]

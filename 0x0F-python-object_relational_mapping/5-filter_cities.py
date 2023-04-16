@@ -1,9 +1,19 @@
 #!/usr/bin/python3
+'''This module contains a script that takes in the name of a state as an argument'''
 import MySQLdb
 from sys import argv
 import re
 
 if __name__ == '__main__':
+    '''This script takes in the name of a state as an argument and lists all
+        cities of that state, using the database hbtn_0e_4_usa.
+        it is safe from MySQL injections!
+        Args:
+             username: MySQL username
+             password: MySQL password
+             database: MySQL database
+             searched: searched state
+    '''
     # Get command line arguments
     username = argv[1]
     password = argv[2]

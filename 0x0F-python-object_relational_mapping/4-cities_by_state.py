@@ -1,8 +1,15 @@
 #!/usr/bin/python3
+'''This module contains a script that lists all cities from the database'''
 import MySQLdb
 from sys import argv
 
 if __name__ == '__main__':
+    '''This script lists all cities from the database hbtn_0e_4_usa
+       Args:
+            username: MySQL username
+            password: MySQL password
+            database: MySQL database
+    '''
     # Get command line arguments
     username = argv[1]
     password = argv[2]
