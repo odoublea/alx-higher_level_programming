@@ -19,10 +19,13 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
 
     session = Session()
-    state = State('Louisiana')
+    newState = State('Louisiana')
+    
+    session.add(newState)
 
     querySelect = session.query(State).all().count()
 
     print(querySelect)
 
+    session.commit()
     session.close()
