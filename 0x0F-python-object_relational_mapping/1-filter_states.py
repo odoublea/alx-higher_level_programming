@@ -12,6 +12,10 @@ if __name__ == '__main__':
     password = argv[2]
     database = argv[3]
 
+    if len(argv) != 4:
+        print(f"Usage: {argv[0]} username password database")
+        sys.exit(1)
+
     # Connect to the MySQL server
     try:
         conn = MySQLdb.connect(host="localhost", port=3306, user=username,
