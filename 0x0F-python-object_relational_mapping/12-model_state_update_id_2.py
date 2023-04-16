@@ -11,7 +11,7 @@ from sys import argv
 if __name__ == '__main__':
     if len(argv) != 4:
         print(f"Usage: username password database")
-        sys.exit(1)
+        exit(1)
 
     username = argv[1]
     password = argv[2]
