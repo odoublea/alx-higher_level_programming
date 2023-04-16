@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     # SELECT query
     selectQuery = f"SELECT * FROM states \
-                    WHERE name = BINARY '{searched}' \
+                    WHERE name = {searched} \
                     ORDER BY id"
 
     # Execute the SELECT query
