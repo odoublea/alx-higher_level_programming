@@ -2,35 +2,35 @@
 import MySQLdb
 from sys import argv
 
-if __name__ == '__main__':
-    # Get command line arguments
-    username = argv[1]
-    password = argv[2]
-    database = argv[3]
 
-    # Connect to the MySQL server
-    try:
-        conn = MySQLdb.connect(host="localhost", port=3306, user=username,
-                               passwd=password, db=database, charset="utf8")
+# Get command line arguments
+username = argv[1]
+password = argv[2]
+database = argv[3]
 
-    except Exception:
-        print('Failed to connect to the database')
-        exit(0)
+# Connect to the MySQL server
+try:
+    conn = MySQLdb.connect(host="localhost", port=3306, user=username,
+                           passwd=password, db=database, charset="utf8")
 
-    # Create a cursor object
-    cur = conn.cursor()
+except Exception:
+    print('Failed to connect to the database')
+    exit(0)
 
-    # Execute the SELECT query
-    # HERE I have to know SQL to grab all states in my database
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+# Create a cursor object
+cur = conn.cursor()
 
-    # Fetch all rows from the query result
-    query_rows = cur.fetchall()
+# Execute the SELECT query
+# HERE I have to know SQL to grab all states in my database
+cur.execute("SELECT * FROM states ORDER BY id ASC")
 
-    # Print each row
-    for row in query_rows:
-        print(row)
+# Fetch all rows from the query result
+query_rows = cur.fetchall()
 
-    # Close the cursor and connection objects
-    cur.close()
-    conn.close()
+# Print each row
+for row in query_rows:
+    print(row)
+
+# Close the cursor and connection objects
+cur.close()
+conn.close()
