@@ -20,12 +20,13 @@ if __name__ == '__main__':
 
     session = Session()
     newState = State('Louisiana')
-    
+
     session.add(newState)
 
-    querySelect = session.query(State).all().count()
+    querySelect = session.query(State).filter(State.name == 'Louisiana')
 
-    print(querySelect)
+    for row in querySelect:
+        print(row.id)
 
     session.commit()
     session.close()
