@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import MySQLdb
-from sys import argv
 '''This module contains a script that lists all states with a
    name starting `N` from the database hbtn_0e_0_usa with without ORM
    '''
+import MySQLdb
+from sys import argv
 
 
 if __name__ == '__main__':
