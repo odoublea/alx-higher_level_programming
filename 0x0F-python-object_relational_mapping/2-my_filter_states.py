@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-'''This module contains a script that takes in an argument and displays all
-   values in the states table of hbtn_0e_0_usa where name matches the argument.
-'''
+'''This module contains a script that takes in an argument and
+   displays all values in the states table of hbtn_0e_0_usa
+   where name matches the argument.
+   '''
 import MySQLdb
 from sys import argv
 
 if __name__ == '__main__':
-    '''This script takes in an argument and displays all values in the states
-       table of hbtn_0e_0_usa where name matches the argument.
+    '''This script takes in an argument and displays all values in
+       the states table of hbtn_0e_0_usa where name matches the argument.
        Args:
             username: MySQL username
             password: MySQL password
@@ -34,7 +35,9 @@ if __name__ == '__main__':
 
     # Execute the SELECT query
     cur.execute(
-        f"SELECT * FROM states WHERE name = BINARY '{searched}' ORDER BY id")
+        f"SELECT * FROM states \
+          WHERE name = BINARY '{searched}' \
+          ORDER BY id")
 
     # Fetch all rows from the query result
     query_rows = cur.fetchall()
