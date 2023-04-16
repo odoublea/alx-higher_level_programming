@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 '''This module contains a script that takes in an argument and
-   displays all values in the states table of hbtn_0e_0_usa
-   where name matches the argument.
-   '''
+displays all values in the states table of hbtn_0e_0_usa
+where name matches the argument.
+:white_check_mark:
+'''
 import MySQLdb
 from sys import argv
 
@@ -34,11 +35,13 @@ if __name__ == '__main__':
     # Create a cursor object
     cur = conn.cursor()
 
+    # SELECT query
+    selectQuery = f"SELECT * FROM states \
+                    WHERE name = BINARY '{searched}' \
+                    ORDER BY id"
+
     # Execute the SELECT query
-    cur.execute(
-        f"SELECT * FROM states \
-          WHERE name = BINARY '{searched}' \
-          ORDER BY id")
+    cur.execute(selectQuery)
 
     # Fetch all rows from the query result
     query_rows = cur.fetchall()
