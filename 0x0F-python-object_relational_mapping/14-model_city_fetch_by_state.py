@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-'''This module contains a script that  prints all City objects from the database hbtn_0e_14_usa
+'''This module contains a script that  prints all City objects
+from the database hbtn_0e_14_usa
 '''
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
