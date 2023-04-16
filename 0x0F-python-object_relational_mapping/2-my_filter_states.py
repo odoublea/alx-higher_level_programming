@@ -32,9 +32,9 @@ if __name__ == '__main__':
     cur = conn.cursor()
 
     # SELECT query
-    selectQuery = f"SELECT * FROM states \
-                    WHERE name = {searched} \
-                    ORDER BY id"
+    selectQuery = "SELECT * FROM states \
+                   WHERE name LIKE BINARY '{}' \
+                   ORDER BY id ASC".format(searched)
 
     # Execute the SELECT query
     cur.execute(selectQuery)
