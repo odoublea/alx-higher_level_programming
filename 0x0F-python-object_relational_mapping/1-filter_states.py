@@ -29,10 +29,10 @@ if __name__ == '__main__':
     cur = conn.cursor()
 
     # SELECT query
-    selectQuery = "SELECT * FROM states \
-                   WHERE  CONVERT(`name` USING Latin1)\
-                 COLLATE Latin1_General_CS LIKE 'N%' \
-                   ORDER BY states.id ASC"
+    selectQuery = f"SELECT * FROM states \
+                    WHERE  CONVERT(`name` USING Latin1) \
+                    COLLATE Latin1_General_CS LIKE 'N%' \
+                    ORDER BY states.id ASC"
 
     # Execute the SELECT query
     cur.execute(selectQuery)
