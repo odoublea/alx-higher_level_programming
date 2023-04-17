@@ -3,7 +3,7 @@
 '''
 from sqlalchemy import Column, String, Integer, ForeignKey
 from relationship_state import Base
-from sqlalchemy.ext.declarative import declarative_base
+
 
 class City(Base):
     """
