@@ -30,8 +30,7 @@ if __name__ == '__main__':
 
     # SELECT query
     selectQuery = f"SELECT * FROM states \
-                    WHERE  CONVERT(`name` USING Latin1) \
-                    COLLATE Latin1_General_CS LIKE 'N%' \
+                    WHERE name LIKE BINARY 'N%' \
                     ORDER BY states.id ASC"
 
     # Execute the SELECT query
