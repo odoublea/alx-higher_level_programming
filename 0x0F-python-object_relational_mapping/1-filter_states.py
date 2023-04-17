@@ -3,7 +3,7 @@
    name starting `N` from the database hbtn_0e_0_usa with without ORM
    '''
 import MySQLdb
-from sys import argv
+from sys import argv, exit
 
 
 if __name__ == '__main__':
@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     if len(argv) != 4:
         print("Usage: {} username password database".format(argv[0]))
-        sys.exit(1)
+        exit(1)
 
     # Connect to the MySQL server
     try:
