@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     data = parse.urlencode({"email": email})
     data = data.encode("ascii")
-    req = request.Request(url, email)
+    req = request.Request(url, data)
 
     with request.urlopen(req) as response:
         body = response.read()
