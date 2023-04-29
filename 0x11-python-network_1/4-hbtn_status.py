@@ -3,10 +3,10 @@
 
 
 if __name__ == "__main__":
-    from urllib import request
+    import requests
 
     url = "https://alx-intranet.hbtn.io/status"
-    response = request.get(url)
+    response = requests.get(url)
     body = response.text
     print("Body response:")
     print("\t- type: {}".format(type(body)))
