@@ -4,10 +4,10 @@ the value of the X-Request-Id variable found in the header of the response."""
 
 
 if __name__ == "__main__":
-    import urllib.request
+    from urllib import request
     from sys import argv
 
-    req = urllib.request.Request(argv[1])
-    with urllib.request.urlopen(req) as response:
+    req = request.Request(argv[1])
+    with request.urlopen(req) as response:
         headers = response.info()
         print(headers.get("X-Request-Id"))
