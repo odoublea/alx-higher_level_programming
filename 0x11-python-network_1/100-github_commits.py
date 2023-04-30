@@ -9,7 +9,7 @@ if __name__ == "__main__":
     owner = argv[1]
     repo = argv[2]
 
-    url = f"https://api.github.com/repos/{owner}/{repo}/commits"
+    url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
 
     response = requests.get(url)
     data = response.json()
