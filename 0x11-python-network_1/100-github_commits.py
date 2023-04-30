@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     response = requests.get(url)
     data = response.json()
-    for i in data:
-        print(i)
-    #if data:
-     #   print("{}: {}".format(data['<sha>'], data['<author name>']))
+    my_data = data[:10]
+
+    for i in my_data:
+        print("{}: {}".format(i['sha'], i['commit']['author']['name']))
