@@ -6,8 +6,8 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-    owner = argv[1]
-    repo = argv[2]
+    repo = argv[1]
+    owner = argv[2]
 
     url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
 
