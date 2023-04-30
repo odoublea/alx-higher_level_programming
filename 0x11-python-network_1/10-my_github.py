@@ -6,13 +6,14 @@ and uses the GitHub API to display your id"""
 if __name__ == "__main__":
     import requests
     from sys import argv
+    from requests.auth import HTTPBasicAuth
 
-    username, password = argv[1:]
-    url = f"https://api.github.com/user"
+    username = argv[1]
+    passwd = argv[2]
 
-    response = requests.get(url, auth=(username, password))
-    if response.status_code == 200:
-        data = response.json()
-        print(data.get('id'))
-    else:
-        print(None)
+    url = "https://api.github.com/user"
+    auth = HTTPBasicAuth(username, passwd)
+
+    response = requests.get(url, auth=auth)
+    data = response.json()
+    print(data.get('id'))
