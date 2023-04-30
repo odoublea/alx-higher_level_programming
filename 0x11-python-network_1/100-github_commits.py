@@ -12,10 +12,10 @@ if __name__ == "__main__":
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
-        my_data = data[:10]
 
-        for i in my_data:
-            print("{}: {}".format(i['sha'], i['commit']['author']['name']))
+        for i in range(10):
+            print("{}: {}".format(data[i].get('sha'), data[i].get(
+                'commit').get('author').get('name')))
 
     else:
         print("Error: Could not retrieve data for repository {}. \
