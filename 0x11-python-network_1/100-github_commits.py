@@ -6,16 +6,21 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-    owner, repo = argv[1:]
+    owner = argv[1]
+    repo = argv[2]
+
     url = f"https://api.github.com/repos/{owner}/{repo}/commits"
 
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
 
-        for i in range(10):
-            print("{}: {}".format(data[i].get('sha'), data[i].get(
-                'commit').get('author').get('name')))
+        try:
+            for i in range(10):
+                print("{}: {}".format(data[i].get('sha'), data[i].get(
+                    'commit').get('author').get('name')))
+        except IndexError:
+            pass
 
     else:
         print("Error: Could not retrieve data for repository {}. \
