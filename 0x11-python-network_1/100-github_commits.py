@@ -12,16 +12,11 @@ if __name__ == "__main__":
     url = f"https://api.github.com/repos/{owner}/{repo}/commits"
 
     response = requests.get(url)
-    if response.status_code == 200:
-        data = response.json()
+    data = response.json()
 
-        try:
-            for i in range(10):
-                print("{}: {}".format(data[i].get('sha'), data[i].get(
-                    'commit').get('author').get('name')))
-        except IndexError:
-            pass
-
-    else:
-        print("Error: Could not retrieve data for repository {}. \
-            Status code: {}".format(repo, response.status_code))
+    try:
+        for i in range(10):
+            print("{}: {}".format(data[i].get('sha'), data[i].get(
+                'commit').get('author').get('name')))
+    except IndexError:
+        pass
