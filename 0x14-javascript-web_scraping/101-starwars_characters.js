@@ -7,8 +7,8 @@ request(url, (error, response, body) => {
     const movies = JSON.parse(body);
     const characters = movies.characters;
 
-    characters.forEach(character => {
-      request(character, (error, response, body) => {
+    characters.forEach(characterUrl => {
+      request(characterUrl, (error, response, body) => {
         if (!error) {
           const character = JSON.parse(body);
           console.log(character.name);
