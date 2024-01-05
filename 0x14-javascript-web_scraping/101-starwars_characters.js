@@ -6,14 +6,18 @@ request(url, (error, response, body) => {
   if (!error) {
     const movies = JSON.parse(body);
     const characters = movies.characters;
-
-    characters.forEach(characterUrl => {
-      request(characterUrl, (error, response, body) => {
-        if (!error) {
-          const character = JSON.parse(body);
-          console.log(character.name);
-        }
-      });
-    });
+    printCharacters(characters, 0);
   }
 });
+
+function printCharacters (characters, index) {
+  request(characters[index], (error, response, body) => {
+    if (!error) {
+      const character = JSON.parse(body);
+      console.log(character.name);
+      if (index + 1 < characters.length) {
+        printCharacters(characters, index + 1);
+      }
+    }
+  });
+}
