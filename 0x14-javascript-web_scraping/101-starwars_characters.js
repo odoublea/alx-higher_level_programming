@@ -4,11 +4,14 @@ const url = `https://swapi-api.alx-tools.com/api/films/${filmId}`;
 
 request(url, (error, response, body) => {
   if (!error) {
-    const characters = JSON.parse(body).characters;
+    const movies = JSON.parse(body);
+    const characters = movies.characters;
+
     characters.forEach(character => {
       request(character, (error, response, body) => {
         if (!error) {
-          console.log(JSON.parse(body).name);
+          const character = JSON.parse(body);
+          console.log(character.name);
         }
       });
     });
